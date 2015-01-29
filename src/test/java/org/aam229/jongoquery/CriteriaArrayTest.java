@@ -11,14 +11,14 @@ public class CriteriaArrayTest {
 		criteria.add("#", "sir");
 		criteria.add("hello");
 		assertEquals("[#, hello]", criteria.getQuery());
-		assertEquals(1, criteria.getParameters().size());
-		assertEquals("sir", criteria.getParameters().get(0));
+		assertEquals(1, criteria.getParametersList().size());
+		assertEquals("sir", criteria.getParametersList().get(0));
 		
 		criteria.add(criteria);
 		assertEquals("[#, hello, [#, hello]]", criteria.getQuery());
-		assertEquals(2, criteria.getParameters().size());
-		assertEquals("sir", criteria.getParameters().get(0));
-		assertEquals("sir", criteria.getParameters().get(1));		
+		assertEquals(2, criteria.getParametersList().size());
+		assertEquals("sir", criteria.getParametersList().get(0));
+		assertEquals("sir", criteria.getParametersList().get(1));		
 	}
 	
 	@Test(expected = NullPointerException.class) 

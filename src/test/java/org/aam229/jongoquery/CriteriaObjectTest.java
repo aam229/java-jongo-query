@@ -10,14 +10,14 @@ public class CriteriaObjectTest {
 		CriteriaObject criteria = new CriteriaObject();
 		criteria.add("hello: #", "sir");
 		assertEquals("{hello: #}", criteria.getQuery());
-		assertEquals(1, criteria.getParameters().size());
-		assertEquals("sir", criteria.getParameters().get(0));
+		assertEquals(1, criteria.getParametersList().size());
+		assertEquals("sir", criteria.getParametersList().get(0));
 		
 		criteria.add("prop", criteria);
 		assertEquals("{hello: #, prop: {hello: #}}", criteria.getQuery());
-		assertEquals(2, criteria.getParameters().size());
-		assertEquals("sir", criteria.getParameters().get(0));
-		assertEquals("sir", criteria.getParameters().get(1));		
+		assertEquals(2, criteria.getParametersList().size());
+		assertEquals("sir", criteria.getParametersList().get(0));
+		assertEquals("sir", criteria.getParametersList().get(1));		
 	}
 	
 	@Test(expected = NullPointerException.class) 

@@ -31,7 +31,7 @@ public class CriteriaObject extends Criteria {
 	 */
 	public CriteriaObject add(String prop, Criteria criteria){
 		joiner.add(propJoiner.reset().add(prop).add(criteria.getQuery()).toString());
-		parameters.addAll(criteria.getParameters());
+		parameters.addAll(criteria.getParametersList());
 		return this;
 	}
 	

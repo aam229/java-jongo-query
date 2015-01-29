@@ -30,9 +30,11 @@ public class CriteriaArray extends Criteria {
 	 * @return
 	 */
 	public CriteriaArray add(Criteria criteria){
-		Objects.requireNonNull(criteria, "The criteria must not be null");
+		if(criteria == null){
+			return this;
+		}
 		joiner.add(criteria.getQuery());
-		parameters.addAll(criteria.getParameters());
+		parameters.addAll(criteria.getParametersList());
 		return this;
 	}
 	

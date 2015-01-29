@@ -21,7 +21,11 @@ public abstract class Criteria {
 	 * 
 	 * @return The criteria's parameters
 	 */
-	public List<Object> getParameters(){
+	public Object[] getParameters(){
+		return parameters.toArray();
+	}
+	
+	public List<Object> getParametersList(){
 		return parameters;
 	}
 }
