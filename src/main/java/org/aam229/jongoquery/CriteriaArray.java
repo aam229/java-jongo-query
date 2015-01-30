@@ -12,7 +12,7 @@ public class CriteriaArray extends Criteria {
 	protected StringJoiner joiner = new StringJoiner(", ", "[", "]");
 	
 	/**
-	 * Add an item to the criteria array
+	 * Add an item to the criteria array. The provided String cannot be null
 	 * @param str A value template
 	 * @param params The parameters for the template
 	 * @return
@@ -25,7 +25,8 @@ public class CriteriaArray extends Criteria {
 	}
 	
 	/**
-	 * Add an item to the criteria array
+	 * Add an item to the criteria array. If the criteria is null, it is 
+	 * a no-op.
 	 * @param criteria 
 	 * @return
 	 */

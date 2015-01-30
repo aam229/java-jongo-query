@@ -27,9 +27,10 @@ public class CriteriaArrayTest {
 		criteria.add(null, "sir");
 	}
 	
-	@Test(expected = NullPointerException.class) 
+	@Test 
 	public void testAddNullCriteria(){
 		CriteriaArray criteria = new CriteriaArray();
 		criteria.add(null);
+		assertEquals("[]", criteria.getQuery());
 	}
 }

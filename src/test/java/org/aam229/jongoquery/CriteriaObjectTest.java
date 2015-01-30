@@ -22,13 +22,13 @@ public class CriteriaObjectTest {
 	
 	@Test(expected = NullPointerException.class) 
 	public void testAddNullString(){
-		CriteriaArray criteria = new CriteriaArray();
+		CriteriaObject criteria = new CriteriaObject();
 		criteria.add(null, "sir");
 	}
 	
 	@Test(expected = NullPointerException.class) 
 	public void testAddNullCriteria(){
-		CriteriaArray criteria = new CriteriaArray();
+		CriteriaObject criteria = new CriteriaObject();
 		criteria.add(null);
 	}
 }

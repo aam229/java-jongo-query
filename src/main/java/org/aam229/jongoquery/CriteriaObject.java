@@ -1,6 +1,7 @@
 package org.aam229.jongoquery;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Represents an object of criteria and their parameters. 
@@ -18,6 +19,7 @@ public class CriteriaObject extends Criteria {
 	 * @return
 	 */
 	public CriteriaObject add(String str, Object... params){
+		Objects.requireNonNull(str, "The criteria must not be null");
 		joiner.add(str);
 		parameters.addAll(Arrays.asList(params));
 		return this;
@@ -30,6 +32,8 @@ public class CriteriaObject extends Criteria {
 	 * @return
 	 */
 	public CriteriaObject add(String prop, Criteria criteria){
+		Objects.requireNonNull(prop, "The property name must not be null");
+		Objects.requireNonNull(criteria, "The criteria must not be null");
 		joiner.add(propJoiner.reset().add(prop).add(criteria.getQuery()).toString());
 		parameters.addAll(criteria.getParametersList());
 		return this;
