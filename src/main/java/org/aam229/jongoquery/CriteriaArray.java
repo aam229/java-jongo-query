@@ -39,6 +39,14 @@ public class CriteriaArray extends Criteria {
 		return this;
 	}
 	
+	/**
+	 * Get the size of the criteria array
+	 * @return
+	 */
+	public int size(){
+		return this.parameters.size();
+	}
+	
 	@Override
 	public String getQuery(){
 		return joiner.toString();
